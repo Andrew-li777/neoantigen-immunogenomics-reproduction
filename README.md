@@ -47,8 +47,7 @@ reproduction/neoantigen_immunogenomics/
 │   ├── pvacseq_hcc1395/                        # Track B-1 2 张分析图 + 摘要 TSV + Top 30 候选表 + 容器版本
 │   └── pvacfuse_hcc1395/                       # Track B-2 1 张分析图 + 融合摘要 TSV + 融合候选明细表
 ├── docs/
-│   ├── REPRO_E_双轨复现SOP与排坑复盘.md         # REPRO-E 技术 SOP：质控阈值依据、5 项实测排坑与真实肿瘤样本接入契约
-│   └── REPRO_E_岗位定向STAR简历与面试答辩.md    # REPRO-E 求职沉淀：JD 对齐矩阵、STAR 简历条目、2 分钟口述稿与 3 大追问应答
+│   └── REPRO_E_双轨复现SOP与排坑复盘.md         # REPRO-E 技术 SOP：质控阈值依据、5 项实测排坑与真实肿瘤样本接入契约
 └── logs/
     ├── smoke_run.log / sessionInfo.txt         # 冒烟全日志与 R 会话信息快照
     ├── 01_scirpy_wu2020.log                    # Track A 容器运行全日志
@@ -65,7 +64,7 @@ reproduction/neoantigen_immunogenomics/
 | `envs/` | 声明全部隔离运行时环境（两份独立 Dockerfile、R 检查脚本、预检工具），与宿主机及相邻 `scan-dig` 项目零耦合 | 全量纳入 Git |
 | `repro_scripts/` | 全部带中文注释的可执行脚本与总控调度器，采用相对脚本目录自定位，无硬编码绝对路径 | 全量纳入 Git |
 | `repro_results/` | 精简后可直接审阅的定量摘要 TSV（100 KB 以内）、软件版本快照及全部 11 张 `.png` 结果图 | 全量纳入 Git，便于直接预览复现成果 |
-| `docs/` & `logs/` | 技术 SOP、STAR 面试复盘文档与原始标准输出日志留痕 | `docs/*.md` 纳入 Git；`logs/*.log` 本地留痕不推大日志 |
+| `docs/` & `logs/` | 技术 SOP 文档与原始标准输出日志留痕 | `docs/REPRO_E_双轨复现SOP与排坑复盘.md` 纳入 Git；私人资料与 `logs/*.log` 本地留痕 |
 
 ---
 
@@ -242,7 +241,6 @@ Rscript reproduction/neoantigen_immunogenomics/envs/install_packages.R --dry-run
 
 ### 已沉淀工程文档与数据清单
 - **技术 SOP 与新队列接入指南**：[REPRO_E_双轨复现SOP与排坑复盘.md](./docs/REPRO_E_双轨复现SOP与排坑复盘.md)
-- **岗位定向 STAR 简历与追问应对**：[REPRO_E_岗位定向STAR简历与面试答辩.md](./docs/REPRO_E_岗位定向STAR简历与面试答辩.md)
 - **三级数据台账**：[data/README.md](./data/README.md) ｜ [data/raw/README.md](./data/raw/README.md) ｜ [data/processed/README.md](./data/processed/README.md)
 
 ### 可拓展延伸方向（供后续迭代）

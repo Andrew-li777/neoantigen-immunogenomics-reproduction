@@ -78,8 +78,12 @@ logs/*.log
 !repro_results/*.csv
 !repro_results/**/*.md
 
-# Private interview, STAR & resume guides in docs/ (keep technical SOPs tracked)
-docs/*[Ii][Nn][Tt][Ee][Rr][Vv][Ii][Ee][Ww]*.md
-docs/*面试*.md
-docs/*简历*.md
-docs/*话术*.md
+# Private interview, defense, showcase & resume notes in any subfolder (keep technical SOPs tracked)
+# Placed at the bottom after !repro_results/**/*.md so these rules always win
+*/**/*[Ii][Nn][Tt][Ee][Rr][Vv][Ii][Ee][Ww]*.md
+*/**/*面试*.md
+*/**/*答辩*.md
+*/**/*项目复盘*.md
+*/**/*简历*.md
+*/**/*话术*.md
+*/**/*[Ss][Hh][Oo][Ww][Cc][Aa][Ss][Ee]*.md
