@@ -1,0 +1,85 @@
+# R & RStudio internal
+.Rproj.user
+*.Rproj
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+**/__MACOSX/
+
+# Python environments & caches
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Nextflow / Snakemake / Docker runtime caches & upstream clones
+.nextflow*
+work/
+.snakemake/
+upstream_*/
+
+# Raw sequencing, variants, references & large binary datasets (keep data/raw/ local only)
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.bam
+*.bam.bai
+*.cram
+*.cram.crai
+*.sam
+*.vcf
+*.vcf.gz
+*.vcf.gz.tbi
+*.bcf
+*.maf
+*.fa
+*.fa.gz
+*.fasta
+*.fasta.gz
+*.fna
+*.gtf
+*.gtf.gz
+*.gff3
+*.gff3.gz
+*.h5ad
+*.h5mu
+*.h5seurat
+*.mtx.gz
+*.zip
+*.tar.gz
+data/raw/**
+!data/raw/.gitkeep
+!data/raw/README.md
+data/processed/*.rds
+data/processed/*.RData
+data/processed/*.h5ad
+data/processed/*.h5mu
+data/processed/pvacseq_hcc1395/
+data/processed/pvacfuse_hcc1395/
+!data/processed/README.md
+
+# General media and temporary outputs
+*.pdf
+*.jpg
+*.html
+logs/*.log
+
+# Allow reproduction results & curated docs for portfolio showcase
+!repro_results/**/*.png
+!repro_results/*.png
+!repro_results/**/*.tsv
+!repro_results/*.tsv
+!repro_results/**/*.txt
+!repro_results/*.txt
+!repro_results/**/*.csv
+!repro_results/*.csv
+!repro_results/**/*.md
+
+# Private interview, STAR & resume guides in docs/ (keep technical SOPs tracked)
+docs/*[Ii][Nn][Tt][Ee][Rr][Vv][Ii][Ee][Ww]*.md
+docs/*面试*.md
+docs/*简历*.md
+docs/*话术*.md

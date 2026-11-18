@@ -1,0 +1,12 @@
+Metric	Value
+Input_Sample	HCC1395_TUMOR_DNA
+Total_Aggregated_Variants	357
+Tier_Pass_Variants	48
+Tier_Subclonal_Variants	7
+Combined_Filtered_Epitopes	52
+MHC_Class_I_Filtered_Epitopes	44
+MHC_Class_II_Filtered_Epitopes	17
+Filtered_Epitopes_In_Genes_Of_Interest	6
+Phased_Proximal_Variant_Records	20
+Median_Best_MT_IC50_Pass_nM	65.28
+Median_DAI_Pass	1.999

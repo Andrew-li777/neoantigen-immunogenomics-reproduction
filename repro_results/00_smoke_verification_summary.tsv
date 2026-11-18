@@ -1,0 +1,8 @@
+Metric	Value
+Total_Neoantigen_Candidates	24
+Prioritized_Neoantigens_PASS	9
+Median_DAI_PASS	10.748
+TCR_Samples_Evaluated	6
+PBMC_Pre_Mean_Clonality	0.2525
+TIL_Post_Mean_Clonality	0.6015
+Smoke_Status	PASS

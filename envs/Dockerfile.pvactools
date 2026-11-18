@@ -1,0 +1,44 @@
+# ==============================================================================
+# Dockerfile.pvactools (Track B: griffithlab/pVACtools v7.1.5 轻量化离线新抗原容器)
+# 设计选型:
+#   1. 基于 python:3.11-slim（pVACtools v7.1.5 仅兼容 Python 3.9–3.11，Windows 不支持原生运行）；
+#   2. 镜像实际体积 ~5 GB，较官方含 IEDB/NetMHCpan 的 9.02 GB 压缩镜像显著精简且免商用授权；
+#   3. 使用随包自带离线权重的 MHCnuggetsI/II 引擎，规避受限网络对 GitHub Release Assets 的访问失败。
+# ==============================================================================
+FROM python:3.11-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1 \
+    MHCFLURRY_DATA_DIR=/workspace/data/raw/mhcflurry_data
+
+# pysam/htslib 编译与 VCF 索引构建工具 (tabix / samtools)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    python3-dev \
+    zlib1g-dev \
+    libbz2-dev \
+    liblzma-dev \
+    libcurl4-openssl-dev \
+    tabix \
+    samtools \
+    && rm -rf /var/lib/apt/lists/*
+
+# [关键 ABI 钉扎修复] pvactools==7.1.5 锁定 numpy==1.26.4，而新版 pyarrow (>=19) 与 tensorflow (>=2.18)
+# 会强拉 numpy>=2.0 导致依赖冲突；此处对齐上游 CI (tests.yml) 显式锁定兼容版本区间。
+RUN pip install --upgrade pip "setuptools<70" wheel && \
+    pip install \
+      "numpy==1.26.4" \
+      "pyarrow<19" \
+      "polars==0.16.18" \
+      "tensorflow<2.16" \
+      "pvactools==7.1.5"
+
+# [隐式系统库修复] pvactools.lib.vector_visualization 模块导入了 turtle -> tkinter，
+# python:3.11-slim 默认未带 libtk8.6.so 会在导入期报 ImportError，故补充安装 libtk8.6。
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libtk8.6 \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /workspace
+CMD ["pvacseq", "--help"]

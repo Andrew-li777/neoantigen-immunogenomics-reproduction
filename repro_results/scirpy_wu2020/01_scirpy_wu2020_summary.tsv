@@ -1,0 +1,15 @@
+Metric	Value
+Raw_GEX_Cells	3000
+Raw_GEX_Genes	30727
+Raw_AIRR_Cells	3000
+Extra_or_Multichain_Fraction	0.0693
+Filtered_Multichain_Cells	17
+Filtered_Orphan_Cells	1138
+PostQC_Retained_Cells	1845
+Unique_NT_Clonotypes	1526
+AA_TCRdist_Clusters	1490
+Convergent_TCR_Cells	174
+Repertoire_Overlap_Samples	31
+Iggytop_Query_Status	SKIPPED (ConnectionError)
+Iggytop_Annotated_Cells	NA (iggytop download unreachable)
+Random_Seed	20261115

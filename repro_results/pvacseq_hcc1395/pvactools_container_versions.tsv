@@ -1,0 +1,15 @@
+Package	Version
+python	3.11.18
+pvactools	7.1.5
+mhcnuggets	2.4.1
+mhcflurry	2.0.6
+tensorflow	2.15.1
+vaxrank	1.4.0
+varcode	1.2.1
+isovar	1.4.24
+vcfpy	0.13.8
+pysam	0.24.1
+numpy	1.26.4
+pandas	2.0.3
+pyarrow	18.1.0
+polars	0.16.18

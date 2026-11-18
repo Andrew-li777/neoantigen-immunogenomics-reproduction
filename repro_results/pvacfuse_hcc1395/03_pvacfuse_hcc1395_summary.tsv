@@ -1,0 +1,10 @@
+Metric	Value
+Input_Sample	HCC1395_TUMOR_RNA
+Total_Aggregated_Fusion_Isoforms	31
+Unique_Aggregated_Fusion_Genes	5
+Tier_Pass_Fusion_Isoforms	16
+Tier_Pass_Unique_Fusion_Genes	3
+Combined_Filtered_Fusion_Epitopes	14
+MHC_Class_I_Filtered_Epitopes	14
+MHC_Class_II_Filtered_Epitopes	6
+Median_Best_MT_IC50_Pass_nM	10.96

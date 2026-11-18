@@ -1,0 +1,31 @@
+# ==============================================================================
+# Dockerfile.scirpy (Track A: scverse/scirpy v0.26+ 单细胞转录组 + TCR 组库容器)
+# 隔离设计: 独立 Linux x86_64 镜像 (~2.17 GB)，完全脱离宿主机及相邻 scan-dig .venv，
+#           运行期仅通过 Docker -v 挂载 reproduction/neoantigen_immunogenomics 工作区。
+# ==============================================================================
+FROM python:3.13-slim
+
+# 禁止生成 __pycache__、开启实时日志刷新，并强制 Matplotlib 使用无头 Agg 后端避免无 X11 报错
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1 \
+    MPLBACKEND=Agg
+
+# 编译底层扩展（parasail/igraph/leidenalg）所需的 C/C++ 工具链与 OpenMP 运行时
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    git \
+    libgomp1 \
+    && rm -rf /var/lib/apt/lists/*
+
+# 安装 scirpy 及其多样性/序列比对/树图布局扩展 (diversity, parasail, rpack)
+RUN pip install --upgrade pip && \
+    pip install \
+      "scirpy[diversity,parasail,rpack]>=0.26.0" \
+      "muon>=0.1.7" \
+      "leidenalg>=0.10.2" \
+      "biopython>=1.83" \
+      "seaborn>=0.13.2"
+
+WORKDIR /workspace
+CMD ["python", "--version"]

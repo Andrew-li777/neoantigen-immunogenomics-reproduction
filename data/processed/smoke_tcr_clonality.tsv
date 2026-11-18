@@ -1,0 +1,7 @@
+sample_id	cohort	total_tcr_reads	unique_clonotypes	clonality	top1_clone_freq	top5_clone_freq	expanded_clones_ge_1pct
+PBMC_Pre_1	PBMC_Pre	2500	80	0.2373	0.2436	0.51	18
+PBMC_Pre_2	PBMC_Pre	2500	80	0.2704	0.2684	0.548	18
+PBMC_Pre_3	PBMC_Pre	2500	80	0.2497	0.2496	0.5272	18
+TIL_Post_1	TIL_Post	2500	57	0.6003	0.5628	0.8668	9
+TIL_Post_2	TIL_Post	2500	54	0.6374	0.6056	0.8916	8
+TIL_Post_3	TIL_Post	2500	65	0.5669	0.528	0.8444	9

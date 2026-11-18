@@ -1,0 +1,21 @@
+# Track A: Single-cell TCR/BCR & Neoantigen Sequence Analysis (Python)
+# 隔离建议：在实际运行中已通过 envs/Dockerfile.scirpy 构建为独立 Linux 容器
+# (neoantigen-scirpy:py313, 实装 scirpy 0.26.1 / scanpy 1.13.0 / muon 0.2.1)；
+# 若要在非容器 venv 中手动安装，请仅在 neoantigen_immunogenomics/.venv 下执行，切勿污染相邻 scan-dig 环境：
+#   python -m venv .venv
+#   .\.venv\Scripts\Activate.ps1
+#   pip install -r envs/requirements.txt
+
+biopython>=1.83      # 生物序列 FASTA/多肽解析
+numpy>=1.26          # 数值计算基础
+scipy>=1.12          # 稀疏矩阵与统计检验
+pandas>=2.2          # 元数据与结果表处理
+matplotlib>=3.8      # 绘图底层引擎
+seaborn>=0.13        # 聚类热图与统计绘图
+anndata>=0.10        # 单细胞矩阵存储容器
+scanpy>=1.10         # scRNA-seq 预处理/PCA/UMAP（注：1.13+ 请用 normalize_total）
+mudata>=0.2.4        # 多模态 (GEX + AIRR) 联合对象容器
+scirpy>=0.19         # 单细胞免疫组库 (TCR/BCR) 链质控、tcrdist 与克隆扩增分析
+leidenalg>=0.10      # Leiden 社区聚类
+python-igraph>=0.11  # 克隆网络图与图论后端
+jupyterlab>=4.0      # 可选交互探索环境

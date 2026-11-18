@@ -1,0 +1,23 @@
+Component	Version	Source
+Python	3.13.3	Runtime
+py:numpy	2.4.6	PyPI/venv
+py:scipy	1.17.1	PyPI/venv
+py:pandas	Not Installed	PyPI/venv
+py:matplotlib	Not Installed	PyPI/venv
+py:seaborn	Not Installed	PyPI/venv
+py:biopython	Not Installed	PyPI/venv
+py:anndata	Not Installed	PyPI/venv
+py:scanpy	Not Installed	PyPI/venv
+py:mudata	Not Installed	PyPI/venv
+py:scirpy	Not Installed	PyPI/venv
+py:pytest	9.0.3	PyPI/venv
+R	4.6.0	Base R
+R:ggplot2	4.0.3	CRAN/Bioc
+R:data.table	1.18.6.1	CRAN/Bioc
+R:dplyr	1.2.1	CRAN/Bioc
+R:patchwork	1.3.2	CRAN/Bioc
+R:ggrepel	0.9.8	CRAN/Bioc
+R:Seurat	5.6.0	CRAN/Bioc
+R:BiocManager	1.30.27	CRAN/Bioc
+R:pheatmap	1.0.13	CRAN/Bioc
+Docker	29.9.3	Docker Desktop
